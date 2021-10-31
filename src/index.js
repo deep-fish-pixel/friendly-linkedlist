@@ -245,9 +245,21 @@ LinkedList.prototype.lastIndexOfNode = function (node) {
 /**
  * Removes the node at the specified position in this list.
  * @param index
- * @returns {object} remove node
+ * @returns {object} removed node value
  */
 LinkedList.prototype.remove = function (index) {
+  const node = this.removeNode(index);
+  if (node) {
+    return node.value;
+  }
+}
+
+/**
+ * Removes the node at the specified position in this list.
+ * @param index
+ * @returns {object} removed node
+ */
+LinkedList.prototype.removeNode = function (index) {
   const node = this.getNode(index);
   if (node) {
     if(index === 0) {
@@ -270,14 +282,14 @@ LinkedList.prototype.remove = function (index) {
 
 /**
  * Removes and returns the first node from this list.
- * @returns {object} remove node
+ * @returns {object} removed node value
  */
 LinkedList.prototype.removeFirst = function () {
   return this.remove(0);
 }
 /**
  * Removes and returns the last node from this list.
- * @returns {object} remove node
+ * @returns {object} remove node value
  */
 LinkedList.prototype.removeLast = function () {
   return this.remove(this.count - 1);
@@ -285,7 +297,7 @@ LinkedList.prototype.removeLast = function () {
 
 /**
  * Pops an node from the stack represented by this list.
- * @returns {object} remove node
+ * @returns {object} removed node value
  */
 LinkedList.prototype.pop = function () {
   return this.removeLast();
@@ -294,7 +306,7 @@ LinkedList.prototype.pop = function () {
 /**
  * Removes the first occurrence of the specified node value in this list (when traversing the list from head to tail).
  * @param value
- * @returns {object} remove node
+ * @returns {object} removed node value
  */
 LinkedList.prototype.removeIndexOf = function (value) {
   const index = this.indexOf(value);
@@ -306,19 +318,19 @@ LinkedList.prototype.removeIndexOf = function (value) {
 /**
  * Removes the first occurrence of the specified node in this list (when traversing the list from head to tail).
  * @param node
- * @returns {object} remove node
+ * @returns {object} removed node
  */
 LinkedList.prototype.removeIndexOfNode = function (node) {
   const index = this.indexOfNode(node);
   if (index >= 0) {
-    return this.remove(index);
+    return this.removeNode(index);
   }
 }
 
 /**
  * Removes the first occurrence of the specified node value in this list (when traversing the list from head to tail).
  * @param value
- * @returns {object} remove node
+ * @returns {object} removed node value
  */
 LinkedList.prototype.removeFirstIndexOf = function (value) {
   return this.removeIndexOf(value);
@@ -327,7 +339,7 @@ LinkedList.prototype.removeFirstIndexOf = function (value) {
 /**
  * Removes the first occurrence of the specified node value in this list (when traversing the list from head to tail).
  * @param node
- * @returns {object} remove node
+ * @returns {object} removed node
  */
 LinkedList.prototype.removeFirstIndexOfNode = function (node) {
   return this.removeIndexOfNode(node);
@@ -336,7 +348,7 @@ LinkedList.prototype.removeFirstIndexOfNode = function (node) {
 /**
  * Removes the last occurrence of the specified node value in this list (when traversing the list from head to tail).
  * @param value
- * @returns {object} remove node
+ * @returns {object} removed node value
  */
 LinkedList.prototype.removeLastIndexOf = function (value) {
   const index = this.lastIndexOf(value);
@@ -348,12 +360,12 @@ LinkedList.prototype.removeLastIndexOf = function (value) {
 /**
  * Removes the last occurrence of the specified node in this list (when traversing the list from head to tail).
  * @param node
- * @returns {object} remove node
+ * @returns {object} removed node
  */
 LinkedList.prototype.removeLastIndexOfNode = function (node) {
   const index = this.lastIndexOfNode(node);
   if (index >= 0) {
-    return this.remove(index);
+    return this.removeNode(index);
   }
 }
 

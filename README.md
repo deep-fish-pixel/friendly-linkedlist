@@ -18,7 +18,7 @@ linkedList.getFirst();
 
 
 ### Methods
-*   [`constructor(array)`](#constructor) Create a LinkedList, array can be null.
+*   [`constructor(array)`](#constructor) Create a LinkedList, array is optional.
 *   [`.add(value, index)`](#add) Inserts the specified value at the specified position in this list
 *   [`.addAll(array, index)`](#addAll) Appends all of the values in the specified collection to the end of this list, in the order that they are returned by the specified array list
 *   [`.addFirst()`](#addFirst) Inserts the specified value at the beginning of this list.

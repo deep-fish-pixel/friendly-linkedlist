@@ -1,6 +1,6 @@
 {
   "name": "friendly-linkedlist",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "friendly-linkedlist",
   "main": "src/index.js",
   "scripts": {
